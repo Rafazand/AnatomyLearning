@@ -6,54 +6,76 @@ public class MenuManager : MonoBehaviour
     public GameObject menu1Panel;
     public GameObject menu2Panel;
     public GameObject explorePanel;
-    public GameObject learnPanel;
+    public GameObject learnPanel; // object Quiz
 
     [Header("Scene Content")]
-    public GameObject organsRoot; // parent dari semua organ/model
+    public GameObject organsRoot;
     public GameObject organsRoot2;
 
-    void Start()
+    [Header("Quiz")]
+    public QuizManager quizManager;
+
+    public void OpenMenu1()
     {
-        ShowMenu1();
+        menu1Panel.SetActive(true);
+        menu2Panel.SetActive(false);
+        explorePanel.SetActive(false);
+        learnPanel.SetActive(false);
+
+        SetSceneContent(false, false);
     }
 
-    void SetOnly(GameObject panelOn)
+    public void OpenMenu2()
     {
-        if (menu1Panel) menu1Panel.SetActive(panelOn == menu1Panel);
-        if (menu2Panel) menu2Panel.SetActive(panelOn == menu2Panel);
-        if (explorePanel) explorePanel.SetActive(panelOn == explorePanel);
-        if (learnPanel) learnPanel.SetActive(panelOn == learnPanel);
+        menu1Panel.SetActive(false);
+        menu2Panel.SetActive(true);
+        explorePanel.SetActive(false);
+        learnPanel.SetActive(false);
+
+        SetSceneContent(false, false);
     }
 
-    public void ShowMenu1()
+    public void OpenExplore()
     {
-        SetOnly(menu1Panel);
-        if (organsRoot) organsRoot.SetActive(false);
+        menu1Panel.SetActive(false);
+        menu2Panel.SetActive(false);
+        explorePanel.SetActive(true);
+        learnPanel.SetActive(false);
+
+        SetSceneContent(true, false);
     }
 
-    public void ShowMenu2()
+    public void OpenQuiz()
     {
-        SetOnly(menu2Panel);
-        if (organsRoot) organsRoot.SetActive(false);
+        menu1Panel.SetActive(false);
+        menu2Panel.SetActive(false);
+        explorePanel.SetActive(false);
+        learnPanel.SetActive(true);
+
+        // Quiz hanya pakai OrgansRoot2
+        SetSceneContent(false, true);
+
+        if (quizManager != null)
+        {
+            quizManager.StartQuiz();
+        }
     }
 
-    public void StartExplore()
+    public void BackToMainMenu()
     {
-        SetOnly(explorePanel);
-        if (organsRoot) organsRoot.SetActive(true);
+        OpenMenu1();
     }
 
-    public void StartLearn()
+    private void SetSceneContent(bool showOrgansRoot, bool showOrgansRoot2)
     {
-        SetOnly(learnPanel);
-        if (organsRoot) organsRoot2.SetActive(true);
-    }
+        if (organsRoot != null)
+        {
+            organsRoot.SetActive(showOrgansRoot);
+        }
 
-    public void QuitApp()
-    {
-        Application.Quit();
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        if (organsRoot2 != null)
+        {
+            organsRoot2.SetActive(showOrgansRoot2);
+        }
     }
 }

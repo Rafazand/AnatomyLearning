@@ -2,29 +2,103 @@
 
 public class SnapZone : MonoBehaviour
 {
+    [Header("Snap")]
     public string acceptedId;
     public Transform snapAnchor;
     public GameObject silhouette;
 
+    [Header("Quiz")]
+    public QuizManager quizManager;
+    public bool submitToQuiz = true;
+
     [Header("Visual")]
     public Renderer zoneRenderer;
     public Color defaultColor = Color.white;
-    public Color correctColor = Color.blue;
+    public Color correctColor = Color.green;
     public Color wrongColor = Color.red;
     public Vector3 tableScale = Vector3.one;
+
+    private bool hasAnswered = false;
+    private MagnetSnapDual currentOrgan;
+
+    private void Awake()
+    {
+        if (quizManager == null)
+        {
+            quizManager = FindObjectOfType<QuizManager>();
+        }
+    }
 
     private void Start()
     {
         if (zoneRenderer != null)
         {
-            zoneRenderer.material = new Material(zoneRenderer.material); // 🔥 clone
-            SetColor(defaultColor);
+            zoneRenderer.material = new Material(zoneRenderer.material);
+            ResetZone();
         }
     }
 
     public bool Accepts(string organId)
     {
+        if (submitToQuiz)
+        {
+            return true;
+        }
+
         return string.IsNullOrEmpty(acceptedId) || organId == acceptedId;
+    }
+
+    public void OnObjectPlaced(string organId, MagnetSnapDual organ)
+    {
+        if (hasAnswered) return;
+
+        hasAnswered = true;
+        currentOrgan = organ;
+
+        if (currentOrgan != null)
+        {
+            currentOrgan.SetLocked(true);
+        }
+
+        if (submitToQuiz && quizManager != null)
+        {
+            quizManager.SubmitAnswer(organId, this);
+        }
+    }
+
+    public void ReturnCurrentOrganHome()
+    {
+        if (currentOrgan != null)
+        {
+            currentOrgan.SetLocked(false);
+            currentOrgan.ForceReturnHome();
+            currentOrgan = null;
+        }
+    }
+
+    public void SetCorrectColor()
+    {
+        SetColor(correctColor);
+    }
+
+    public void SetWrongColor()
+    {
+        SetColor(wrongColor);
+    }
+
+    public void ResetZone()
+    {
+        hasAnswered = false;
+        SetColor(defaultColor);
+        SetSilhouette(false);
+    }
+
+    public void SetSilhouette(bool on)
+    {
+        if (silhouette != null)
+        {
+            silhouette.SetActive(on);
+        }
     }
 
     public void SetColor(Color color)
@@ -33,27 +107,5 @@ public class SnapZone : MonoBehaviour
         {
             zoneRenderer.material.color = color;
         }
-    }
-
-    public void OnObjectPlaced(string organId)
-    {
-        if (Accepts(organId))
-        {
-            SetColor(correctColor); // 🔵 benar
-        }
-        else
-        {
-            SetColor(wrongColor); // 🔴 salah
-        }
-    }
-
-    public void OnObjectRemoved()
-    {
-        SetColor(defaultColor); // ⚪ reset
-    }
-
-    public void SetSilhouette(bool on)
-    {
-        if (silhouette) silhouette.SetActive(on);
     }
 }

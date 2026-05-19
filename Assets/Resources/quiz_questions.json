@@ -1,0 +1,204 @@
+{
+  "questions": [
+    {
+      "question": "Organ tubuh mana yang digunakan untuk bernapas?",
+      "answerId": "lung"
+    },
+    {
+      "question": "Organ tubuh mana yang memompa darah ke seluruh tubuh?",
+      "answerId": "heart"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita berpikir?",
+      "answerId": "brain"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu mencerna makanan?",
+      "answerId": "stomach"
+    },
+    {
+      "question": "Organ tubuh mana yang menyaring darah?",
+      "answerId": "kidney"
+    },
+    {
+      "question": "Organ tubuh mana yang menghasilkan empedu?",
+      "answerId": "liver"
+    },
+    {
+      "question": "Organ tubuh mana yang menyimpan urin?",
+      "answerId": "bladder"
+    },
+    {
+      "question": "Organ tubuh mana yang menyerap nutrisi makanan?",
+      "answerId": "small_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang menyerap air dari sisa makanan?",
+      "answerId": "large_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang menghubungkan hidung ke paru-paru?",
+      "answerId": "trachea"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita mencium bau?",
+      "answerId": "nose"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita berbicara dan makan?",
+      "answerId": "oral"
+    },
+    {
+      "question": "Organ tubuh mana yang menghasilkan insulin?",
+      "answerId": "pancreas"
+    },
+    {
+      "question": "Organ tubuh mana yang membersihkan racun dari darah?",
+      "answerId": "liver"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu mengedarkan oksigen?",
+      "answerId": "heart"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh mendapatkan oksigen?",
+      "answerId": "lung"
+    },
+    {
+      "question": "Organ tubuh mana yang mengontrol tubuh dan pikiran?",
+      "answerId": "brain"
+    },
+    {
+      "question": "Organ tubuh mana yang menghancurkan makanan di dalam tubuh?",
+      "answerId": "stomach"
+    },
+    {
+      "question": "Organ tubuh mana yang menghasilkan urin?",
+      "answerId": "kidney"
+    },
+    {
+      "question": "Organ tubuh mana yang menyimpan cairan empedu?",
+      "answerId": "gallbladder"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu pertukaran oksigen?",
+      "answerId": "lung"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita mengingat?",
+      "answerId": "brain"
+    },
+    {
+      "question": "Organ tubuh mana yang berdetak setiap saat?",
+      "answerId": "heart"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh mencerna makanan?",
+      "answerId": "stomach"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu membersihkan darah?",
+      "answerId": "kidney"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh membuang racun?",
+      "answerId": "liver"
+    },
+    {
+      "question": "Organ tubuh mana yang menyimpan air kencing sebelum dikeluarkan?",
+      "answerId": "bladder"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh menyerap vitamin?",
+      "answerId": "small_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang menjadi jalan udara ke paru-paru?",
+      "answerId": "trachea"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita bernapas saat olahraga?",
+      "answerId": "lung"
+    },
+    {
+      "question": "Organ tubuh mana yang bekerja seperti pusat kontrol tubuh?",
+      "answerId": "brain"
+    },
+    {
+      "question": "Organ tubuh mana yang memompa darah tanpa berhenti?",
+      "answerId": "heart"
+    },
+    {
+      "question": "Organ tubuh mana yang menyimpan makanan sementara?",
+      "answerId": "stomach"
+    },
+    {
+      "question": "Organ tubuh mana yang menyaring zat sisa dari darah?",
+      "answerId": "kidney"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu proses pencernaan lemak?",
+      "answerId": "gallbladder"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh mendapatkan energi dari makanan?",
+      "answerId": "small_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh membuang sisa makanan?",
+      "answerId": "large_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita berbicara?",
+      "answerId": "oral"
+    },
+    {
+      "question": "Organ tubuh mana yang digunakan untuk mencium aroma makanan?",
+      "answerId": "nose"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh tetap hidup dengan oksigen?",
+      "answerId": "lung"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh berpikir dan belajar?",
+      "answerId": "brain"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu darah bergerak ke seluruh tubuh?",
+      "answerId": "heart"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu menghancurkan makanan dengan asam?",
+      "answerId": "stomach"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu menjaga tubuh tetap bersih dari racun?",
+      "answerId": "liver"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu mengatur kadar gula darah?",
+      "answerId": "pancreas"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu tubuh mengeluarkan urin?",
+      "answerId": "bladder"
+    },
+    {
+      "question": "Organ tubuh mana yang menyerap sebagian besar makanan bergizi?",
+      "answerId": "small_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang menjadi bagian akhir pencernaan?",
+      "answerId": "large_intestine"
+    },
+    {
+      "question": "Organ tubuh mana yang menjadi jalur udara menuju paru-paru?",
+      "answerId": "trachea"
+    },
+    {
+      "question": "Organ tubuh mana yang membantu kita mencium bau harum?",
+      "answerId": "nose"
+    }
+  ]
+}
