@@ -11,12 +11,15 @@ public class SnapZone : MonoBehaviour
     public QuizManager quizManager;
     public bool submitToQuiz = true;
 
+    [Header("Answer Display")]
+    public Vector3 answerScale = new Vector3(0.2f, 0.2f, 0.2f);
+    public Vector3 answerRotationEuler = new Vector3(0f, 180f, 0f);
+
     [Header("Visual")]
     public Renderer zoneRenderer;
     public Color defaultColor = Color.white;
     public Color correctColor = Color.green;
     public Color wrongColor = Color.red;
-    public Vector3 tableScale = Vector3.one;
 
     private bool hasAnswered = false;
     private MagnetSnapDual currentOrgan;

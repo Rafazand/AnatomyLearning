@@ -4,11 +4,11 @@ using UnityEngine.Events;
 
 public class MagnetSnapDual : MonoBehaviour
 {
-    [Header("Home Anchor (tubuh)")]
+    [Header("Home Anchor")]
     public Transform homeAnchor;
 
     [Header("Home Snap Settings")]
-    public float snapDistance = 0.40f;
+    public float snapDistance = 0.4f;
     public float snapAngle = 180f;
     public float smoothTime = 0.12f;
 
@@ -55,17 +55,13 @@ public class MagnetSnapDual : MonoBehaviour
         _sfx = GetComponent<InteractableSfx>();
 
         _organId = GetComponent<OrganId>();
+        if (_organId == null) _organId = GetComponentInParent<OrganId>();
+        if (_organId == null) _organId = GetComponentInChildren<OrganId>();
 
         if (_organId == null)
-            _organId = GetComponentInParent<OrganId>();
-
-        if (_organId == null)
-            _organId = GetComponentInChildren<OrganId>();
-
-        if (_organId == null)
+        {
             Debug.LogWarning($"{gameObject.name} tidak punya OrganId.");
-        else
-            Debug.Log($"{gameObject.name} memakai OrganId: {_organId.id}");
+        }
     }
 
     public void OnGrab()
@@ -98,21 +94,17 @@ public class MagnetSnapDual : MonoBehaviour
                 : targetZone.transform;
 
             Vector3 targetPos = anchor.position;
-            Quaternion targetRot = anchor.rotation;
-            Vector3 targetScale = targetZone.tableScale;
+            Quaternion targetRot = Quaternion.Euler(targetZone.answerRotationEuler);
+            Vector3 targetScale = targetZone.answerScale;
 
             targetZone.SetSilhouette(false);
 
-            SnapTo(targetPos, targetRot, targetScale, true, () =>
+            SnapToAnswerBox(targetPos, targetRot, targetScale, true, () =>
             {
                 if (_organId != null)
                 {
                     Debug.Log($"Submit organ ke quiz: {_organId.id}");
                     targetZone.OnObjectPlaced(_organId.id, this);
-                }
-                else
-                {
-                    Debug.LogWarning($"{gameObject.name} tidak punya OrganId.");
                 }
 
                 OnPlacedOnTable?.Invoke();
@@ -125,9 +117,7 @@ public class MagnetSnapDual : MonoBehaviour
         {
             PrepareSfxForSnapIfNeeded();
 
-            Transform targetHome = homeAnchor != null ? homeAnchor : transform;
-
-            SnapTo(targetHome.position, targetHome.rotation, _defaultScale, true, () =>
+            SnapToHome(_homePos, _homeRot, _defaultScale, true, () =>
             {
                 OnSnappedBackHome?.Invoke();
             });
@@ -147,9 +137,7 @@ public class MagnetSnapDual : MonoBehaviour
     {
         StopSnapRoutine();
 
-        Transform targetHome = homeAnchor != null ? homeAnchor : transform;
-
-        SnapTo(targetHome.position, targetHome.rotation, _defaultScale, false, () =>
+        SnapToHome(_homePos, _homeRot, _defaultScale, false, () =>
         {
             OnSnappedBackHome?.Invoke();
         });
@@ -157,12 +145,12 @@ public class MagnetSnapDual : MonoBehaviour
 
     private bool IsNearHome()
     {
-        float d = Vector3.Distance(transform.position, _homePos);
-        float a = restoreRotation ? Quaternion.Angle(transform.rotation, _homeRot) : 0f;
+        float distance = Vector3.Distance(transform.position, _homePos);
+        float angle = restoreRotation ? Quaternion.Angle(transform.rotation, _homeRot) : 0f;
 
-        bool passAngle = !restoreRotation || a <= snapAngle;
+        bool passAngle = !restoreRotation || angle <= snapAngle;
 
-        return d <= snapDistance && passAngle;
+        return distance <= snapDistance && passAngle;
     }
 
     private void PrepareSfxForSnapIfNeeded()
@@ -173,7 +161,84 @@ public class MagnetSnapDual : MonoBehaviour
         _sfx.MuteScaleFor(muteFor);
     }
 
-    private void SnapTo(
+    private void SnapToAnswerBox(
+        Vector3 targetPos,
+        Quaternion targetRot,
+        Vector3 targetScale,
+        bool playSnapSfx,
+        System.Action onDone
+    )
+    {
+        StopSnapRoutine();
+
+        if (playSnapSfx)
+        {
+            _sfx?.PlaySnap();
+        }
+
+        StartCoroutine(SnapAnswerRoutine(targetPos, targetRot, targetScale, onDone));
+    }
+
+    private IEnumerator SnapAnswerRoutine(
+        Vector3 targetPos,
+        Quaternion targetRot,
+        Vector3 targetScale,
+        System.Action onDone
+    )
+    {
+        Vector3 startScale = transform.localScale;
+        Vector3 startPos = transform.position;
+        Quaternion startRot = transform.rotation;
+
+        Vector3 visualCenterOffset = GetRendererCenterOffset();
+        Vector3 finalPos = targetPos - visualCenterOffset;
+
+        float t = 0f;
+        float duration = Mathf.Max(0.0001f, smoothTime);
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+
+            if (restoreScale)
+            {
+                transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            }
+
+            if (restorePosition)
+            {
+                transform.position = Vector3.Lerp(startPos, finalPos, t);
+            }
+
+            if (restoreRotation)
+            {
+                transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
+            }
+
+            yield return null;
+        }
+
+        if (restoreScale)
+        {
+            transform.localScale = targetScale;
+        }
+
+        if (restoreRotation)
+        {
+            transform.rotation = targetRot;
+        }
+
+        if (restorePosition)
+        {
+            Vector3 correctedOffset = GetRendererCenterOffset();
+            transform.position = targetPos - correctedOffset;
+        }
+
+        _snapRoutine = null;
+        onDone?.Invoke();
+    }
+
+    private void SnapToHome(
         Vector3 targetPos,
         Quaternion targetRot,
         Vector3 targetScale,
@@ -239,6 +304,25 @@ public class MagnetSnapDual : MonoBehaviour
 
         _snapRoutine = null;
         onDone?.Invoke();
+    }
+
+    private Vector3 GetRendererCenterOffset()
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+
+        if (renderers == null || renderers.Length == 0)
+        {
+            return Vector3.zero;
+        }
+
+        Bounds bounds = renderers[0].bounds;
+
+        for (int i = 1; i < renderers.Length; i++)
+        {
+            bounds.Encapsulate(renderers[i].bounds);
+        }
+
+        return bounds.center - transform.position;
     }
 
     private void ApplyTransform(Vector3 targetPos, Quaternion targetRot, Vector3 targetScale)
