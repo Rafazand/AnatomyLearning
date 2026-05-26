@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +16,13 @@ public class MagnetSnapDual : MonoBehaviour
     public bool restorePosition = true;
     public bool restoreRotation = true;
     public bool restoreScale = true;
+
+    [Header("Snap into Zone")]
+    [Tooltip("Offset rotasi tambahan saat organ di-snap ke zona (di atas rotasi anchor). Default -90 Y agar organ menghadap depan.")]
+    public Vector3 snapRotationOffset = new Vector3(0f, -90f, 0f);
+
+    [Tooltip("Multiplier scale saat snap ke zona. 1.4 = 40% lebih besar dari answerScale di SnapZone.")]
+    public float snapScaleMultiplier = 1.4f;
 
     [Header("SFX Behaviour")]
     public bool muteScaleSfxDuringSnap = true;
@@ -36,6 +43,7 @@ public class MagnetSnapDual : MonoBehaviour
 
     private InteractableSfx _sfx;
     private SnapZone _currentZone;
+    private SnapZone _placedZone; // zona tempat organ sedang terpasang (Explore)
     private OrganId _organId;
 
     private void Start()
@@ -59,22 +67,26 @@ public class MagnetSnapDual : MonoBehaviour
         if (_organId == null) _organId = GetComponentInChildren<OrganId>();
 
         if (_organId == null)
-        {
             Debug.LogWarning($"{gameObject.name} tidak punya OrganId.");
-        }
     }
 
     public void OnGrab()
     {
         if (_isLocked) return;
 
+        // Jika organ sedang terpasang di zona (Explore mode), beritahu zona agar reset
+        // sehingga organ bisa ditempatkan kembali setelah diambil
+        if (_placedZone != null)
+        {
+            _placedZone.OnOrganPickedUp();
+            _placedZone = null;
+        }
+
         _isGrabbed = true;
         StopSnapRoutine();
 
         if (_currentZone != null)
-        {
             _currentZone.SetSilhouette(true);
-        }
     }
 
     public void OnRelease()
@@ -93,20 +105,18 @@ public class MagnetSnapDual : MonoBehaviour
                 ? targetZone.snapAnchor
                 : targetZone.transform;
 
-            Vector3 targetPos = anchor.position;
-            Quaternion targetRot = Quaternion.Euler(targetZone.answerRotationEuler);
-            Vector3 targetScale = targetZone.answerScale;
+            Vector3 targetPos   = anchor.position;
+            Quaternion targetRot = anchor.rotation * Quaternion.Euler(snapRotationOffset);
+            Vector3 targetScale  = targetZone.answerScale * snapScaleMultiplier;
 
             targetZone.SetSilhouette(false);
 
             SnapToAnswerBox(targetPos, targetRot, targetScale, true, () =>
             {
                 if (_organId != null)
-                {
-                    Debug.Log($"Submit organ ke quiz: {_organId.id}");
                     targetZone.OnObjectPlaced(_organId.id, this);
-                }
 
+                _placedZone = targetZone; // catat zona tempat organ terpasang
                 OnPlacedOnTable?.Invoke();
             });
 
@@ -135,6 +145,7 @@ public class MagnetSnapDual : MonoBehaviour
 
     public void ForceReturnHome()
     {
+        _placedZone = null; // organ keluar dari zona
         StopSnapRoutine();
 
         SnapToHome(_homePos, _homeRot, _defaultScale, false, () =>
@@ -147,16 +158,12 @@ public class MagnetSnapDual : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, _homePos);
         float angle = restoreRotation ? Quaternion.Angle(transform.rotation, _homeRot) : 0f;
-
-        bool passAngle = !restoreRotation || angle <= snapAngle;
-
-        return distance <= snapDistance && passAngle;
+        return distance <= snapDistance && (!restoreRotation || angle <= snapAngle);
     }
 
     private void PrepareSfxForSnapIfNeeded()
     {
         if (_sfx == null || !muteScaleSfxDuringSnap) return;
-
         float muteFor = Mathf.Max(0f, smoothTime) + Mathf.Max(0f, scaleSfxMuteExtra);
         _sfx.MuteScaleFor(muteFor);
     }
@@ -166,16 +173,10 @@ public class MagnetSnapDual : MonoBehaviour
         Quaternion targetRot,
         Vector3 targetScale,
         bool playSnapSfx,
-        System.Action onDone
-    )
+        System.Action onDone)
     {
         StopSnapRoutine();
-
-        if (playSnapSfx)
-        {
-            _sfx?.PlaySnap();
-        }
-
+        if (playSnapSfx) _sfx?.PlaySnap();
         StartCoroutine(SnapAnswerRoutine(targetPos, targetRot, targetScale, onDone));
     }
 
@@ -183,11 +184,10 @@ public class MagnetSnapDual : MonoBehaviour
         Vector3 targetPos,
         Quaternion targetRot,
         Vector3 targetScale,
-        System.Action onDone
-    )
+        System.Action onDone)
     {
         Vector3 startScale = transform.localScale;
-        Vector3 startPos = transform.position;
+        Vector3 startPos   = transform.position;
         Quaternion startRot = transform.rotation;
 
         Vector3 visualCenterOffset = GetRendererCenterOffset();
@@ -200,34 +200,15 @@ public class MagnetSnapDual : MonoBehaviour
         {
             t += Time.deltaTime / duration;
 
-            if (restoreScale)
-            {
-                transform.localScale = Vector3.Lerp(startScale, targetScale, t);
-            }
-
-            if (restorePosition)
-            {
-                transform.position = Vector3.Lerp(startPos, finalPos, t);
-            }
-
-            if (restoreRotation)
-            {
-                transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
-            }
+            if (restoreScale)    transform.localScale = Vector3.Lerp(startScale, targetScale, t);
+            if (restorePosition) transform.position   = Vector3.Lerp(startPos, finalPos, t);
+            if (restoreRotation) transform.rotation   = Quaternion.Slerp(startRot, targetRot, t);
 
             yield return null;
         }
 
-        if (restoreScale)
-        {
-            transform.localScale = targetScale;
-        }
-
-        if (restoreRotation)
-        {
-            transform.rotation = targetRot;
-        }
-
+        if (restoreScale)    transform.localScale = targetScale;
+        if (restoreRotation) transform.rotation   = targetRot;
         if (restorePosition)
         {
             Vector3 correctedOffset = GetRendererCenterOffset();
@@ -243,15 +224,10 @@ public class MagnetSnapDual : MonoBehaviour
         Quaternion targetRot,
         Vector3 targetScale,
         bool playSnapSfx,
-        System.Action onDone
-    )
+        System.Action onDone)
     {
         StopSnapRoutine();
-
-        if (playSnapSfx)
-        {
-            _sfx?.PlaySnap();
-        }
+        if (playSnapSfx) _sfx?.PlaySnap();
 
         if (smoothTime <= 0f)
         {
@@ -268,40 +244,27 @@ public class MagnetSnapDual : MonoBehaviour
         Vector3 targetPos,
         Quaternion targetRot,
         Vector3 targetScale,
-        System.Action onDone
-    )
+        System.Action onDone)
     {
         float t = 0f;
         float duration = Mathf.Max(0.0001f, smoothTime);
 
-        Vector3 startPos = transform.position;
+        Vector3 startPos   = transform.position;
         Quaternion startRot = transform.rotation;
-        Vector3 startScale = transform.localScale;
+        Vector3 startScale  = transform.localScale;
 
         while (t < 1f)
         {
             t += Time.deltaTime / duration;
 
-            if (restorePosition)
-            {
-                transform.position = Vector3.Lerp(startPos, targetPos, t);
-            }
-
-            if (restoreRotation)
-            {
-                transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
-            }
-
-            if (restoreScale)
-            {
-                transform.localScale = Vector3.Lerp(startScale, targetScale, t);
-            }
+            if (restorePosition) transform.position   = Vector3.Lerp(startPos, targetPos, t);
+            if (restoreRotation) transform.rotation   = Quaternion.Slerp(startRot, targetRot, t);
+            if (restoreScale)    transform.localScale = Vector3.Lerp(startScale, targetScale, t);
 
             yield return null;
         }
 
         ApplyTransform(targetPos, targetRot, targetScale);
-
         _snapRoutine = null;
         onDone?.Invoke();
     }
@@ -309,38 +272,20 @@ public class MagnetSnapDual : MonoBehaviour
     private Vector3 GetRendererCenterOffset()
     {
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
-
-        if (renderers == null || renderers.Length == 0)
-        {
-            return Vector3.zero;
-        }
+        if (renderers == null || renderers.Length == 0) return Vector3.zero;
 
         Bounds bounds = renderers[0].bounds;
-
         for (int i = 1; i < renderers.Length; i++)
-        {
             bounds.Encapsulate(renderers[i].bounds);
-        }
 
         return bounds.center - transform.position;
     }
 
     private void ApplyTransform(Vector3 targetPos, Quaternion targetRot, Vector3 targetScale)
     {
-        if (restorePosition)
-        {
-            transform.position = targetPos;
-        }
-
-        if (restoreRotation)
-        {
-            transform.rotation = targetRot;
-        }
-
-        if (restoreScale)
-        {
-            transform.localScale = targetScale;
-        }
+        if (restorePosition) transform.position   = targetPos;
+        if (restoreRotation) transform.rotation   = targetRot;
+        if (restoreScale)    transform.localScale = targetScale;
     }
 
     private void StopSnapRoutine()
@@ -354,24 +299,16 @@ public class MagnetSnapDual : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_currentZone != null) return;
         SnapZone zone = other.GetComponentInParent<SnapZone>();
-
-        if (zone != null)
-        {
+        if (zone != null && zone.Accepts(_organId?.id))
             _currentZone = zone;
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         SnapZone zone = other.GetComponentInParent<SnapZone>();
-
-        if (zone != null && _currentZone == zone)
-        {
-            if (!_isLocked && !_isGrabbed)
-            {
-                _currentZone = null;
-            }
-        }
+        if (zone != null && _currentZone == zone && !_isLocked)
+            _currentZone = null;
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class SnapZone : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class SnapZone : MonoBehaviour
 
     [Header("Answer Display")]
     public Vector3 answerScale = new Vector3(0.2f, 0.2f, 0.2f);
-    public Vector3 answerRotationEuler = new Vector3(0f, 180f, 0f);
+    public Vector3 answerRotationEuler = new Vector3(0f, 180f, 0f); // tidak dipakai saat snapAnchor ada, tapi dipertahankan untuk fallback
 
     [Header("Visual")]
     public Renderer zoneRenderer;
@@ -43,11 +43,7 @@ public class SnapZone : MonoBehaviour
 
     public bool Accepts(string organId)
     {
-        if (submitToQuiz)
-        {
-            return true;
-        }
-
+        if (submitToQuiz) return true;
         return string.IsNullOrEmpty(acceptedId) || organId == acceptedId;
     }
 
@@ -58,15 +54,20 @@ public class SnapZone : MonoBehaviour
         hasAnswered = true;
         currentOrgan = organ;
 
-        if (currentOrgan != null)
-        {
+        // Hanya lock di quiz mode — di Explore, organ tetap bisa diambil kembali
+        if (submitToQuiz && currentOrgan != null)
             currentOrgan.SetLocked(true);
-        }
 
         if (submitToQuiz && quizManager != null)
-        {
             quizManager.SubmitAnswer(organId, this);
-        }
+    }
+
+    // Dipanggil oleh MagnetSnapDual.OnGrab() saat organ diambil dari slot (Explore mode)
+    public void OnOrganPickedUp()
+    {
+        hasAnswered = false;
+        currentOrgan = null;
+        SetColor(defaultColor);
     }
 
     public void ReturnCurrentOrganHome()
@@ -99,16 +100,12 @@ public class SnapZone : MonoBehaviour
     public void SetSilhouette(bool on)
     {
         if (silhouette != null)
-        {
             silhouette.SetActive(on);
-        }
     }
 
     public void SetColor(Color color)
     {
         if (zoneRenderer != null)
-        {
             zoneRenderer.material.color = color;
-        }
     }
 }

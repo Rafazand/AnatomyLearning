@@ -1004,7 +1004,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &44354564
@@ -1026,6 +1026,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -1858,13 +1860,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85023034}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 990545039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &85050635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,11 +2154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Nose Cavity
   snapAnchor: {fileID: 1724785772}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -2350,11 +2352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Brain
   snapAnchor: {fileID: 1438520855}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -2885,7 +2887,7 @@ MonoBehaviour:
   snapAnchor: {fileID: 1560390392}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 180049450}
@@ -3465,6 +3467,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -4135,6 +4139,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -4799,11 +4805,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Varicadium
   snapAnchor: {fileID: 1392986551}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -5670,6 +5676,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270967140}
   m_CullTransparentMesh: 1
+--- !u!1 &276349040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276349041}
+  m_Layer: 0
+  m_Name: Nose Cavity_Interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276349041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276349040}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5847237682044364573}
+  m_Father: {fileID: 543450652683339319}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &279047331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,13 +5732,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279047331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1229887434}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &293477192
 GameObject:
   m_ObjectHideFlags: 0
@@ -5750,11 +5788,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Gallbladder
   snapAnchor: {fileID: 2118115062}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -5881,13 +5919,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295932233}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2001101747}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!135 &295932235
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6401,11 +6439,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Large
   snapAnchor: {fileID: 794016065}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -7748,6 +7786,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -9601,7 +9641,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &463930452
@@ -9636,6 +9676,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -11650,11 +11692,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Small
   snapAnchor: {fileID: 1468821514}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -11942,11 +11984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Liver
   snapAnchor: {fileID: 1132353900}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 1000445166}
@@ -13249,7 +13291,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &642179008
@@ -13271,6 +13313,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -13642,13 +13686,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672841311}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -2.16, y: 0.0039, z: -4.6}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.1, y: 0.10000002, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1812267806}
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &672841314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14825,11 +14869,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Vessel
   snapAnchor: {fileID: 1962133689}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -15218,6 +15262,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -16511,6 +16557,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -17004,13 +17052,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794016064}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 303993789}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &800903145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7114770129336771049, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
@@ -17264,11 +17312,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Stomach
   snapAnchor: {fileID: 1818568273}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -18059,7 +18107,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &854905476
@@ -18081,6 +18129,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -18543,6 +18593,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -19141,7 +19193,7 @@ MonoBehaviour:
   snapAnchor: {fileID: 1999567212}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 871825791}
@@ -21744,7 +21796,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &969610097
@@ -21766,6 +21818,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -21860,11 +21914,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Ligament
   snapAnchor: {fileID: 85023035}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -22644,6 +22698,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -22771,6 +22827,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -24516,7 +24574,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1076467017
@@ -24538,6 +24596,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -25880,7 +25940,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1114040586
@@ -26310,6 +26370,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 0.5
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -26516,13 +26578,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128349421}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1875765876}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1128536939
 GameObject:
   m_ObjectHideFlags: 0
@@ -26776,13 +26838,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132353899}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 624843369}
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &1132353901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28135,6 +28197,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -28551,11 +28615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Trachea
   snapAnchor: {fileID: 279047332}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -30610,11 +30674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Main
   snapAnchor: {fileID: 295932234}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -31189,6 +31253,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -31917,13 +31983,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392986550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 230960267}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1395180830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32195,13 +32261,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397761776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1711707689}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1400508400
 GameObject:
   m_ObjectHideFlags: 0
@@ -32617,6 +32683,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -33473,13 +33541,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438520854}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 123432288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1441821286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33867,13 +33935,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468821513}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 596157890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1468821515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34001,17 +34069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc95c4b88185754292ccc50a9037f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeAnchor: {fileID: 596157892}
-  snapDistance: 0.4
-  snapAngle: 180
-  snapOnlyOnRelease: 1
-  smoothTime: 0.12
-  restorePosition: 1
-  restoreRotation: 1
-  restoreScale: 1
-  muteScaleSfxDuringSnap: 1
-  scaleSfxMuteExtra: 0.05
-  drawGizmos: 0
 --- !u!114 &1468821518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35809,6 +35866,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -36718,13 +36777,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560390391}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 3.11, y: -0.0058, z: -5.3}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.1, y: 0.10000002, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 180049446}
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1560390394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36896,6 +36955,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -37987,7 +38048,14 @@ GameObject:
   - component: {fileID: 1600812351}
   - component: {fileID: 1600812350}
   - component: {fileID: 1600812349}
-  - component: {fileID: 1600812348}
+  - component: {fileID: 1600812361}
+  - component: {fileID: 1600812360}
+  - component: {fileID: 1600812359}
+  - component: {fileID: 1600812358}
+  - component: {fileID: 1600812357}
+  - component: {fileID: 1600812356}
+  - component: {fileID: 1600812355}
+  - component: {fileID: 1600812354}
   m_Layer: 0
   m_Name: Brain_interactable
   m_TagString: Untagged
@@ -38012,21 +38080,6 @@ Transform:
   - {fileID: 1539942897}
   m_Father: {fileID: 543450652683339319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1600812348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600812346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bedaac29a943f844a7074b53c8bdf9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pointable: {fileID: 1600812351}
-  _rigidbody: {fileID: 1600812353}
-  _scaleMassWithSize: 1
 --- !u!114 &1600812349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38106,8 +38159,8 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 1600812361}
+  _twoGrabTransformer: {fileID: 1600812361}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
   _rigidbody: {fileID: 1600812353}
@@ -38159,9 +38212,459 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1600812354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbb05da1d09b3f48ba396bd87c92cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeAnchor: {fileID: 0}
+  snapDistance: 0.4
+  snapAngle: 180
+  smoothTime: 0.12
+  restorePosition: 1
+  restoreRotation: 1
+  restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
+  muteScaleSfxDuringSnap: 1
+  scaleSfxMuteExtra: 0.05
+  OnPlacedOnTable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSnappedBackHome:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1600812355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd23d109a9780b4fa96ef95c2cbfc04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
+--- !u!114 &1600812356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6335fe9bc8ad96b449a96c56e4716f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabClip: {fileID: 8300000, guid: 3a2498bd428c8924fa6a1f831fd58d8d, type: 3}
+  releaseClip: {fileID: 8300000, guid: 96c1ef7c38e9cd94da642addb147fc26, type: 3}
+  scaleClip: {fileID: 8300000, guid: 26cda06ef6aadbe4493b4f5490c090d6, type: 3}
+  snapClip: {fileID: 8300000, guid: 44b2e086498b09645b0fa46f16adef86, type: 3}
+  minScaleDeltaToTrigger: 0.01
+  scaleSfxCooldown: 0.08
+--- !u!82 &1600812357
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1600812358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358cbd2353c662a42bb45a99d6772cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1600812359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 1600812349}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812354}
+        m_TargetAssemblyTypeName: MagnetSnapDual, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812356}
+        m_TargetAssemblyTypeName: InteractableSfx, Assembly-CSharp
+        m_MethodName: PlayGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812354}
+        m_TargetAssemblyTypeName: MagnetSnapDual, Assembly-CSharp
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1600812360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactableView: {fileID: 1600812350}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812354}
+        m_TargetAssemblyTypeName: MagnetSnapDual, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812356}
+        m_TargetAssemblyTypeName: InteractableSfx, Assembly-CSharp
+        m_MethodName: PlayGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenUnselect:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1539942898}
+        m_TargetAssemblyTypeName: LabelToggleCounter, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1600812354}
+        m_TargetAssemblyTypeName: MagnetSnapDual, Assembly-CSharp
+        m_MethodName: OnRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1600812361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600812346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb7085c111fcb44493d57d4e336d3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _positionConstraints:
+    ConstraintsAreRelative: 0
+    XAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+    YAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+    ZAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+  _rotationConstraints:
+    XAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+    YAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+    ZAxis:
+      ConstrainAxis: 0
+      AxisRange:
+        Min: 0
+        Max: 0
+  _scaleConstraints:
+    ConstraintsAreRelative: 1
+    XAxis:
+      ConstrainAxis: 1
+      AxisRange:
+        Min: 0.3
+        Max: 3
+    YAxis:
+      ConstrainAxis: 1
+      AxisRange:
+        Min: 0.3
+        Max: 3
+    ZAxis:
+      ConstrainAxis: 1
+      AxisRange:
+        Min: 0.3
+        Max: 3
+  _resetScaleResponsivenessOnConstraintOvershoot: 0
 --- !u!1 &1624449953
 GameObject:
   m_ObjectHideFlags: 0
@@ -39112,11 +39615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Pancreas
   snapAnchor: {fileID: 1397761777}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -39364,13 +39867,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724785771}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 118216610}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1725602289
 GameObject:
   m_ObjectHideFlags: 0
@@ -39449,6 +39952,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -41543,7 +42048,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1768069900
@@ -41565,6 +42070,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -42135,17 +42642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc95c4b88185754292ccc50a9037f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeAnchor: {fileID: 165585584}
-  snapDistance: 0.4
-  snapAngle: 180
-  snapOnlyOnRelease: 1
-  smoothTime: 0.12
-  restorePosition: 1
-  restoreRotation: 1
-  restoreScale: 1
-  muteScaleSfxDuringSnap: 1
-  scaleSfxMuteExtra: 0.05
-  drawGizmos: 0
 --- !u!114 &1793089061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42635,7 +43131,7 @@ MonoBehaviour:
   snapAnchor: {fileID: 672841312}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 1812267813}
@@ -42882,13 +43378,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818568272}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 805871383}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1822750490
 GameObject:
   m_ObjectHideFlags: 0
@@ -43847,6 +44343,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -44496,11 +44994,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Oral Cavity
   snapAnchor: {fileID: 1128349422}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -44869,6 +45367,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -45062,11 +45562,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a6174d8e0a2bb47bc0b08c60d1facd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptedId: 
+  acceptedId: Kidney
   snapAnchor: {fileID: 1911972693}
   silhouette: {fileID: 0}
   quizManager: {fileID: 0}
-  submitToQuiz: 1
+  submitToQuiz: 0
   answerScale: {x: 0.2, y: 0.2, z: 0.2}
   answerRotationEuler: {x: 0, y: 180, z: 0}
   zoneRenderer: {fileID: 0}
@@ -45193,13 +45693,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911972692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1902674284}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1913899585
 GameObject:
   m_ObjectHideFlags: 0
@@ -45843,13 +46343,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962133688}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 711100655}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1966417571
 GameObject:
   m_ObjectHideFlags: 0
@@ -46703,7 +47203,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1985308850
@@ -46725,6 +47225,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -46794,13 +47296,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999567211}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 871825785}
-  m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &1999567213
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47812,6 +48314,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -48686,6 +49190,8 @@ MonoBehaviour:
   restorePosition: 1
   restoreRotation: 1
   restoreScale: 1
+  snapRotationOffset: {x: 0, y: -90, z: 0}
+  snapScaleMultiplier: 1.4
   muteScaleSfxDuringSnap: 1
   scaleSfxMuteExtra: 0.05
   OnPlacedOnTable:
@@ -49219,13 +49725,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118115061}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 293477193}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &2123584742
 GameObject:
   m_ObjectHideFlags: 0
@@ -50391,7 +50897,7 @@ Transform:
   - {fileID: 1076467004}
   - {fileID: 969610084}
   - {fileID: 1600812347}
-  - {fileID: 5847237682044364573}
+  - {fileID: 276349041}
   - {fileID: 8947558933720837134}
   - {fileID: 4709791461330297918}
   - {fileID: 2065979057919705384}
@@ -52716,12 +53222,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2746953349592833437}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00000003774895, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07160749, y: 3.4355905, z: 0}
+  m_LocalRotation: {x: -0.000000037748954, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07160723, y: 3.4355903, z: 0}
   m_LocalScale: {x: 18.442913, y: 18.442913, z: 18.442913}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652683339319}
+  m_Father: {fileID: 276349041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5894525614777750007
 PrefabInstance:
