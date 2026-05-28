@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenu1()
     {
+        HideOrganInfoPanel();
+
         menu1Panel.SetActive(true);
         menu2Panel.SetActive(false);
         explorePanel.SetActive(false);
@@ -27,6 +29,8 @@ public class MenuManager : MonoBehaviour
 
     public void OpenMenu2()
     {
+        HideOrganInfoPanel();
+
         menu1Panel.SetActive(false);
         menu2Panel.SetActive(true);
         explorePanel.SetActive(false);
@@ -47,6 +51,8 @@ public class MenuManager : MonoBehaviour
 
     public void OpenQuiz()
     {
+        HideOrganInfoPanel();
+
         menu1Panel.SetActive(false);
         menu2Panel.SetActive(false);
         explorePanel.SetActive(false);
@@ -66,16 +72,23 @@ public class MenuManager : MonoBehaviour
         OpenMenu1();
     }
 
+    // ── Helpers ────────────────────────────────────────────────────────────────
+
     private void SetSceneContent(bool showOrgansRoot, bool showOrgansRoot2)
     {
         if (organsRoot != null)
-        {
             organsRoot.SetActive(showOrgansRoot);
-        }
 
         if (organsRoot2 != null)
-        {
             organsRoot2.SetActive(showOrgansRoot2);
-        }
+    }
+
+    /// <summary>
+    /// Sembunyikan info panel organ (Explore) saat berpindah ke mode lain.
+    /// Aman dipanggil kapan saja — null-check dilakukan di dalam BodyFrontInfoController.
+    /// </summary>
+    private void HideOrganInfoPanel()
+    {
+        BodyFrontInfoController.Instance?.ForceHide();
     }
 }

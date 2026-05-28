@@ -1,0 +1,99 @@
+{
+  "organs": [
+    {
+      "id": "BodyFront",
+      "title": "Bagian Depan Tubuh",
+      "description": "Tampilan depan tubuh manusia memperlihatkan susunan organ-organ utama seperti jantung, paru-paru, hati, lambung, dan usus. Memahami letak organ ini penting untuk mengenali cara kerja tubuh secara keseluruhan."
+    },
+    {
+      "id": "LungR",
+      "title": "Paru-Paru Kanan",
+      "description": "Paru-paru kanan lebih besar dari paru-paru kiri dan terdiri dari tiga lobus: atas, tengah, dan bawah. Fungsinya adalah menyerap oksigen dari udara yang kita hirup dan melepaskan karbon dioksida dari darah melalui proses pertukaran gas."
+    },
+    {
+      "id": "LungL",
+      "title": "Paru-Paru Kiri",
+      "description": "Paru-paru kiri memiliki dua lobus dan sedikit lebih kecil dari paru-paru kanan karena berbagi ruang dengan jantung di rongga dada. Berfungsi bersama paru-paru kanan untuk menjaga pasokan oksigen bagi seluruh tubuh."
+    },
+    {
+      "id": "Liver",
+      "title": "Hati",
+      "description": "Hati adalah organ terbesar dalam tubuh, terletak di sisi kanan atas perut. Hati menyaring racun dari darah, memproduksi empedu untuk membantu pencernaan lemak, menyimpan cadangan gula (glikogen), serta menghasilkan protein penting bagi tubuh."
+    },
+    {
+      "id": "Main",
+      "title": "Jantung",
+      "description": "Jantung adalah pompa berotot yang mengalirkan darah ke seluruh tubuh tanpa henti. Terletak di tengah dada sedikit ke kiri, jantung berdetak sekitar 60-100 kali per menit melalui empat ruang: atrium kiri dan kanan, serta ventrikel kiri dan kanan."
+    },
+    {
+      "id": "Small",
+      "title": "Usus Kecil",
+      "description": "Usus kecil adalah organ pencernaan terpanjang, sekitar 6-7 meter, yang berfungsi menyerap hampir seluruh nutrisi dari makanan yang telah dicerna. Terdiri dari tiga bagian: duodenum, jejunum, dan ileum yang bekerja secara berurutan."
+    },
+    {
+      "id": "Large",
+      "title": "Usus Besar",
+      "description": "Usus besar bertugas menyerap air dan elektrolit dari sisa makanan, kemudian membentuk dan menyimpan feses sebelum dikeluarkan dari tubuh. Panjangnya sekitar 1,5 meter dan mencakup kolon, sekum, serta rektum."
+    },
+    {
+      "id": "Stomach",
+      "title": "Lambung",
+      "description": "Lambung adalah organ berongga seperti kantong yang terletak di antara kerongkongan dan usus kecil. Di dalamnya, makanan dicampur dengan asam lambung dan enzim pencernaan hingga menjadi cairan kental (kimus) sebelum dilanjutkan ke usus kecil."
+    },
+    {
+      "id": "Trachea",
+      "title": "Trakea",
+      "description": "Trakea atau batang tenggorokan adalah saluran berongga yang menghubungkan laring (kotak suara) dengan paru-paru. Diperkuat oleh cincin tulang rawan berbentuk huruf C, trakea mengalirkan udara dari hidung dan mulut menuju paru-paru setiap kali kita bernapas."
+    },
+    {
+      "id": "Brain",
+      "title": "Otak",
+      "description": "Otak adalah pusat kendali seluruh tubuh yang terletak di dalam tengkorak. Terdiri dari miliaran sel saraf, otak mengatur gerakan, pikiran, emosi, memori, indra, hingga fungsi vital seperti pernapasan dan detak jantung yang bekerja secara otomatis."
+    },
+    {
+      "id": "Nose_Cavity",
+      "title": "Rongga Hidung",
+      "description": "Rongga hidung adalah ruang di dalam hidung yang menjadi pintu masuk utama udara ke saluran pernapasan. Rongga ini menyaring debu dan partikel asing, menghangatkan serta melembabkan udara, sekaligus mengandung reseptor penciuman untuk mendeteksi bau."
+    },
+    {
+      "id": "Pancreas",
+      "title": "Pankreas",
+      "description": "Pankreas memiliki dua fungsi utama. Sebagai kelenjar eksokrin, pankreas menghasilkan enzim pencernaan (amilase, lipase, protease) yang disalurkan ke usus kecil. Sebagai kelenjar endokrin, pankreas memproduksi hormon insulin dan glukagon untuk mengatur kadar gula dalam darah."
+    },
+    {
+      "id": "Gallbladder",
+      "title": "Kantong Empedu",
+      "description": "Kantong empedu adalah organ kecil berbentuk buah pir yang terletak di bawah hati. Fungsinya menyimpan dan memekatkan cairan empedu yang diproduksi oleh hati, lalu melepaskannya ke usus kecil saat diperlukan untuk membantu mencerna dan menyerap lemak dari makanan."
+    },
+    {
+      "id": "Callbladder",
+      "title": "Kantong Empedu",
+      "description": "Kantong empedu adalah organ kecil berbentuk buah pir yang terletak di bawah hati. Fungsinya menyimpan dan memekatkan cairan empedu yang diproduksi oleh hati, lalu melepaskannya ke usus kecil saat diperlukan untuk membantu mencerna dan menyerap lemak dari makanan."
+    },
+    {
+      "id": "Kidney",
+      "title": "Ginjal",
+      "description": "Ginjal adalah sepasang organ berbentuk seperti kacang merah yang terletak di punggung atas. Ginjal menyaring sekitar 200 liter darah setiap hari, membuang limbah dan kelebihan air sebagai urin, serta mengatur tekanan darah dan keseimbangan elektrolit tubuh."
+    },
+    {
+      "id": "Ligament",
+      "title": "Ligamen",
+      "description": "Ligamen adalah jaringan ikat berserat yang kuat dan fleksibel. Fungsinya menghubungkan tulang satu dengan tulang lainnya pada sendi, memberikan stabilitas, membatasi gerakan berlebihan, dan melindungi sendi dari cedera saat tubuh bergerak."
+    },
+    {
+      "id": "Oral_Cavity",
+      "title": "Rongga Mulut",
+      "description": "Rongga mulut adalah awal dari sistem pencernaan, terdiri dari bibir, gigi, gusi, lidah, dan langit-langit. Di sini makanan dikunyah secara mekanik dan dicampur air liur yang mengandung enzim amilase untuk memulai pencernaan karbohidrat, sekaligus berperan dalam bicara."
+    },
+    {
+      "id": "Vessel",
+      "title": "Pembuluh Darah",
+      "description": "Pembuluh darah adalah jaringan saluran yang membawa darah ke seluruh tubuh. Arteri mengalirkan darah kaya oksigen dari jantung, vena mengembalikannya ke jantung, dan kapiler — pembuluh terkecil — menjadi tempat pertukaran oksigen, nutrisi, dan limbah antara darah dan jaringan tubuh."
+    },
+    {
+      "id": "Vericadium",
+      "title": "Selaput Jantung",
+      "description": "Perikardium atau selaput jantung adalah membran berlapis dua yang menyelubungi dan melindungi jantung. Lapisan dalamnya menghasilkan cairan perikardial yang mengurangi gesekan saat jantung berdetak, sekaligus menjaga jantung tetap pada posisinya di dalam rongga dada."
+    }
+  ]
+}
