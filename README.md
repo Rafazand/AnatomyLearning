@@ -1,4 +1,4 @@
-# AnatomyLearning — Aplikasi Edukasi Anatomi Tubuh Manusia (MR/VR)
+# AnatomyLearning — Aplikasi Edukasi Anatomi Tubuh Manusia (MR)
 
 Aplikasi Mixed Reality (MR) berbasis Meta Quest untuk pembelajaran interaktif anatomi tubuh manusia. Dibangun dengan Unity 6 dan Meta XR SDK, aplikasi ini menyediakan dua mode belajar: **Explore** (eksplorasi bebas organ) dan **Quiz** (uji pemahaman).
 
@@ -11,7 +11,7 @@ Aplikasi Mixed Reality (MR) berbasis Meta Quest untuk pembelajaran interaktif an
 - **Hand Controller Support** — Interaksi via kontroler Meta Quest dengan haptic feedback
 - **Spatial Audio** — Suara 3D untuk setiap interaksi (grab, snap, benar/salah)
 - **Data JSON** — Konten organ dan soal kuis dimuat dari file JSON, mudah diperbarui tanpa mengubah kode
-- **Narasi & Video** — Dukungan narasi audio dan video preview edukatif
+- **Narasi** — Dukungan narasi audio
 
 ---
 
@@ -36,7 +36,6 @@ AnatomyLearning/
 │   ├── Scenes/            # SampleScene.unity (scene utama)
 │   ├── Resources/         # Data JSON (organ & kuis)
 │   ├── Sfx/               # Audio clips interaksi
-│   ├── Videos/            # Video preview edukatif
 │   ├── InteractionSDK/    # Meta Interaction SDK
 │   └── Oculus/            # OVR-specific assets
 ├── Packages/              # Dependency packages
@@ -79,9 +78,7 @@ AnatomyLearning/
 ### Visual & Audio
 | Script | Fungsi |
 |---|---|
-| `BillboardToCamera.cs` | Label UI selalu menghadap kamera |
 | `InteractableSfx.cs` | Audio grab, release, snap, scale dengan cooldown |
-| `VideoPreviewPopup.cs` | Popup video edukatif di menu |
 
 ---
 
