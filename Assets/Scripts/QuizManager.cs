@@ -18,6 +18,13 @@ public class QuizManager : MonoBehaviour
     public GameObject quizPanel;
     public GameObject resultPanel;
 
+    [Header("Dynamic Panel Size")]
+    [Tooltip("Main Panel (background) yang akan menyesuaikan tinggi dengan panjang soal.")]
+    public RectTransform mainPanelRect;
+    public float panelPaddingY = 80f;
+    public float panelMinHeight = 220f;
+    public float panelMaxHeight = 500f;
+
     [Header("Settings")]
     public int totalQuestions = 10;
     public float nextQuestionDelay = 1.2f;
@@ -86,12 +93,30 @@ public class QuizManager : MonoBehaviour
         if (questionText != null)
         {
             questionText.text = selectedQuestions[currentIndex].question;
+            FitPanelToQuestion();
         }
 
         if (scoreText != null)
         {
             scoreText.text = $"Score: {score}/{selectedQuestions.Count}";
         }
+    }
+
+    private void FitPanelToQuestion()
+    {
+        if (mainPanelRect == null) return;
+
+        questionText.ForceMeshUpdate();
+        float targetHeight = Mathf.Clamp(questionText.preferredHeight + panelPaddingY, panelMinHeight, panelMaxHeight);
+
+        Vector2 panelSize = mainPanelRect.sizeDelta;
+        panelSize.y = targetHeight;
+        mainPanelRect.sizeDelta = panelSize;
+
+        RectTransform questionRect = questionText.rectTransform;
+        Vector2 questionSize = questionRect.sizeDelta;
+        questionSize.y = targetHeight - panelPaddingY * 0.5f;
+        questionRect.sizeDelta = questionSize;
     }
 
     public void SubmitAnswer(string organId, SnapZone snapZone)

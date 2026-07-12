@@ -56,9 +56,10 @@ public class BodyFrontInfoController : MonoBehaviour
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
 
-    [Header("Audio (tidak digunakan — narasi dinonaktifkan)")]
+    [Header("Audio Narasi")]
     public AudioSource audioSource;
-    public AudioClip narration;
+    [Tooltip("Folder di Assets/Resources/ tempat file audio narasi disimpan. Nama file harus sama persis dengan 'id' organ di organ_data.json (contoh: Resources/Narration/Main.mp3 untuk organ id 'Main').")]
+    public string narrationResourceFolder = "Narration";
 
     // ── Internal ────────────────────────────────────────────────────────────────
     private Dictionary<string, OrganInfoEntry> _db;
@@ -157,6 +158,34 @@ public class BodyFrontInfoController : MonoBehaviour
         }
 
         panel.SetActive(true);
+        PlayNarration(organId);
+    }
+
+    // ── Narasi ──────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Putar audio narasi organ dari Resources/{narrationResourceFolder}/{organId}.
+    /// Tidak melakukan apa-apa jika narasi dimatikan di NarrationSettings atau file tidak ditemukan.
+    /// </summary>
+    private void PlayNarration(string organId)
+    {
+        if (audioSource == null) return;
+
+        audioSource.Stop();
+
+        bool narrationOn = NarrationSettings.Instance == null || NarrationSettings.Instance.narrationEnabled;
+        if (!narrationOn) return;
+
+        AudioClip clip = Resources.Load<AudioClip>($"{narrationResourceFolder}/{organId}");
+        if (clip == null)
+        {
+            Debug.LogWarning($"[OrganInfoPanel] Audio narasi untuk '{organId}' tidak ditemukan di " +
+                              $"Resources/{narrationResourceFolder}/{organId}.");
+            return;
+        }
+
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     /// <summary>
@@ -177,10 +206,9 @@ public class BodyFrontInfoController : MonoBehaviour
     public void ForceHide()
     {
         _currentOrganId = null;
+        StopNarration();
         if (panel != null) panel.SetActive(false);
     }
-
-    // ── Backward compat ─────────────────────────────────────────────────────────
 
     public void StopNarration()
     {

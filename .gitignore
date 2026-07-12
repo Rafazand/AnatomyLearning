@@ -12,4 +12,8 @@ UserSettings/
 .vs/
 *.csproj
 *.sln
+*.slnx
 *.user
+
+.utmp/
+.vscode/

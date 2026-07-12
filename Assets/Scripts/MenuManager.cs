@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour
     public void OpenMenu1()
     {
         HideOrganInfoPanel();
+        HideQuizPanels();
 
         menu1Panel.SetActive(true);
         menu2Panel.SetActive(false);
@@ -30,6 +31,7 @@ public class MenuManager : MonoBehaviour
     public void OpenMenu2()
     {
         HideOrganInfoPanel();
+        HideQuizPanels();
 
         menu1Panel.SetActive(false);
         menu2Panel.SetActive(true);
@@ -41,6 +43,8 @@ public class MenuManager : MonoBehaviour
 
     public void OpenExplore()
     {
+        HideQuizPanels();
+
         menu1Panel.SetActive(false);
         menu2Panel.SetActive(false);
         explorePanel.SetActive(true);
@@ -90,5 +94,14 @@ public class MenuManager : MonoBehaviour
     private void HideOrganInfoPanel()
     {
         BodyFrontInfoController.Instance?.ForceHide();
+    }
+
+    /// <summary>
+    /// Sembunyikan quiz panel & result panel saat berpindah keluar dari mode Quiz.
+    /// resultPanel bukan child dari learnPanel, jadi harus disembunyikan terpisah.
+    /// </summary>
+    private void HideQuizPanels()
+    {
+        quizManager?.BackToMenu();
     }
 }
