@@ -51,7 +51,7 @@
       "description": "Otak adalah pusat kendali seluruh tubuh yang terletak di dalam tengkorak. Terdiri dari miliaran sel saraf, otak mengatur gerakan, pikiran, emosi, memori, indra, hingga fungsi vital seperti pernapasan dan detak jantung yang bekerja secara otomatis."
     },
     {
-      "id": "Nose_Cavity",
+      "id": "Nose Cavity",
       "title": "Rongga Hidung",
       "description": "Rongga hidung adalah ruang di dalam hidung yang menjadi pintu masuk utama udara ke saluran pernapasan. Rongga ini menyaring debu dan partikel asing, menghangatkan serta melembabkan udara, sekaligus mengandung reseptor penciuman untuk mendeteksi bau."
     },
@@ -66,11 +66,6 @@
       "description": "Kantong empedu adalah organ kecil berbentuk buah pir yang terletak di bawah hati. Fungsinya menyimpan dan memekatkan cairan empedu yang diproduksi oleh hati, lalu melepaskannya ke usus kecil saat diperlukan untuk membantu mencerna dan menyerap lemak dari makanan."
     },
     {
-      "id": "Callbladder",
-      "title": "Kantong Empedu",
-      "description": "Kantong empedu adalah organ kecil berbentuk buah pir yang terletak di bawah hati. Fungsinya menyimpan dan memekatkan cairan empedu yang diproduksi oleh hati, lalu melepaskannya ke usus kecil saat diperlukan untuk membantu mencerna dan menyerap lemak dari makanan."
-    },
-    {
       "id": "Kidney",
       "title": "Ginjal",
       "description": "Ginjal adalah sepasang organ berbentuk seperti kacang merah yang terletak di punggung atas. Ginjal menyaring sekitar 200 liter darah setiap hari, membuang limbah dan kelebihan air sebagai urin, serta mengatur tekanan darah dan keseimbangan elektrolit tubuh."
@@ -81,7 +76,7 @@
       "description": "Ligamen adalah jaringan ikat berserat yang kuat dan fleksibel. Fungsinya menghubungkan tulang satu dengan tulang lainnya pada sendi, memberikan stabilitas, membatasi gerakan berlebihan, dan melindungi sendi dari cedera saat tubuh bergerak."
     },
     {
-      "id": "Oral_Cavity",
+      "id": "Oral Cavity",
       "title": "Rongga Mulut",
       "description": "Rongga mulut adalah awal dari sistem pencernaan, terdiri dari bibir, gigi, gusi, lidah, dan langit-langit. Di sini makanan dikunyah secara mekanik dan dicampur air liur yang mengandung enzim amilase untuk memulai pencernaan karbohidrat, sekaligus berperan dalam bicara."
     },

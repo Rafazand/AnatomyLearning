@@ -34,6 +34,7 @@ public class QuizManager : MonoBehaviour
     private int score;
     private bool canAnswer;
     private bool quizRunning;
+    private Coroutine nextQuestionCoroutine;
 
     public bool CanAnswer => canAnswer;
 
@@ -60,6 +61,8 @@ public class QuizManager : MonoBehaviour
             Debug.LogError("JSON kosong atau format salah.");
             return;
         }
+
+        StopPendingNextQuestion();
 
         selectedQuestions = data.questions
             .OrderBy(q => Random.value)
@@ -153,12 +156,14 @@ public class QuizManager : MonoBehaviour
             scoreText.text = $"Score: {score}/{selectedQuestions.Count}";
         }
 
-        StartCoroutine(NextQuestionRoutine(snapZone));
+        nextQuestionCoroutine = StartCoroutine(NextQuestionRoutine(snapZone));
     }
 
     private IEnumerator NextQuestionRoutine(SnapZone snapZone)
     {
         yield return new WaitForSeconds(nextQuestionDelay);
+
+        nextQuestionCoroutine = null;
 
         if (snapZone != null)
         {
@@ -175,6 +180,15 @@ public class QuizManager : MonoBehaviour
         else
         {
             ShowQuestion();
+        }
+    }
+
+    private void StopPendingNextQuestion()
+    {
+        if (nextQuestionCoroutine != null)
+        {
+            StopCoroutine(nextQuestionCoroutine);
+            nextQuestionCoroutine = null;
         }
     }
 
@@ -208,6 +222,8 @@ public class QuizManager : MonoBehaviour
     {
         canAnswer = false;
         quizRunning = false;
+
+        StopPendingNextQuestion();
 
         if (quizPanel != null)
         {
