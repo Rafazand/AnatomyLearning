@@ -8584,7 +8584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 595206484569908514, guid: 708bb04189b8488418aa725e7f94bbe8, type: 3}
       propertyPath: m_text
-      value: Explore Organ
+      value: Pelajari Organ
       objectReference: {fileID: 0}
     - target: {fileID: 595206484569908514, guid: 708bb04189b8488418aa725e7f94bbe8, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -15602,7 +15602,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697021969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 26.1}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15610,7 +15610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39.9, y: 31.8}
+  m_AnchoredPosition: {x: -51, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697021971
@@ -16109,8 +16109,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 16.6
+      value: 7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1706241386746814278, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -16190,7 +16198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_text
-      value: Exit
+      value: Keluar
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -16315,6 +16323,10 @@ PrefabInstance:
     - target: {fileID: 8237446752394246868, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237446752394246868, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 8237446752394246868, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -32705,23 +32717,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7114770130731238579, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 288.1374
+      value: 400.8564
       objectReference: {fileID: 0}
     - target: {fileID: 7114770130731238579, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 107.458
+      value: 207.3443
       objectReference: {fileID: 0}
     - target: {fileID: 7114770130731238579, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0106
+      value: 0.0353
       objectReference: {fileID: 0}
     - target: {fileID: 7114770130731238579, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0512
+      value: -0.0932
       objectReference: {fileID: 0}
     - target: {fileID: 7114770130731238579, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.035
+      value: 0.1224
       objectReference: {fileID: 0}
     - target: {fileID: 7755127141733438790, guid: df64bf5efda75be4db0c812f9277d678, type: 3}
       propertyPath: m_AnchorMax.y
@@ -43942,7 +43954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.3
+      value: -0.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 1706241386746814278, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -44022,7 +44034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_text
-      value: Back
+      value: Kembali
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -44594,8 +44606,16 @@ PrefabInstance:
       value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.3
+      value: -1.199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532266648364290690, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 1706241386746814278, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -44675,7 +44695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_text
-      value: Back
+      value: Kembali
       objectReference: {fileID: 0}
     - target: {fileID: 4672917962609713052, guid: 7b4b3ab309753d842ba0a79751aa1fb8, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -46215,7 +46235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 595206484569908514, guid: 708bb04189b8488418aa725e7f94bbe8, type: 3}
       propertyPath: m_text
-      value: Start
+      value: Mulai
       objectReference: {fileID: 0}
     - target: {fileID: 595206484569908514, guid: 708bb04189b8488418aa725e7f94bbe8, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
@@ -51056,7 +51076,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975519961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.2}
+  m_LocalPosition: {x: 0, y: 0, z: -1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -51064,8 +51084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -51.2, y: 72.1}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -36.7, y: 71}
+  m_SizeDelta: {x: 286.31, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975519963
 MonoBehaviour:
@@ -51087,7 +51107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Anatomy Learning
+  m_text: Belajar Anatomi Tubuh
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
